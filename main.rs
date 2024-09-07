@@ -12,6 +12,10 @@ async fn run_js(file_path: &str) -> Result<(), AnyError> {
 
     });
 
+    js_runtime
+    .execute_script("[runjs:runtime.js)", include_str!("runtime.js"))
+    .unwrap();
+
     let mod_id = js_runtime.load_main_es_module(&main_module).await?;
     let result = js_runtime.mod_evaluate(mod_id);
     js_runtime
