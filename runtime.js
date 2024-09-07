@@ -41,13 +41,7 @@
             core.print(`${logMessage}\n`,true);
         },
 
-        timestamp: (...args) =>
-            {
-            const time_stamp= new Date().toISOString();
-            const formatted_msg = `[${time_stamp}] ${argsToMessage(...args)}`;
-            core.print(`${formatted_msg}\n`,false);
-
-        }    };
+    };
 }
 
 )(globalThis);
